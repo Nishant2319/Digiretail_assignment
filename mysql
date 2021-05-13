@@ -1,0 +1,17 @@
+-- this is to create table in mysql  with same column as in  sheet --
+
+CREATE TABLE `test`.`product_detail` (
+  `product_serial_no` VARCHAR(50) NOT NULL,
+  `product_name` VARCHAR(30) NULL,
+  `model_name` VARCHAR(30) NULL,
+  `group_associated` VARCHAR(30) NULL,
+  `product_mrp` DOUBLE NULL,
+  PRIMARY KEY (`product_serial_no`));
+  
+  
+  -- this query for load data from local data file to mysql table --
+  
+  LOAD DATA LOCAL INFILE 'beginner_assignment01-product_listing.csv' INTO TABLE product_detail FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' IGNORE 1 ROWS;
+
+  
+  
